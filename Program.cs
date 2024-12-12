@@ -22,6 +22,7 @@ var appName=builder.Environment.ApplicationName;
 
 if (builder.Environment.IsDevelopment())
 {
+   // builder.Services.AddTransient<IMediator, Mediator>();   
     builder.Services.AddDbContext<AppDbContext>(options =>
     {
         var config = builder.Configuration;

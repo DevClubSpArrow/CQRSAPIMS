@@ -7,7 +7,6 @@ namespace CQRSAPI.QueryClass
 {
     public class AddEmployee
     {
-
         public class Command:IRequest<DTO.EmployeeDTO> 
         { 
         public string? EmployeeName { get; set; }
@@ -18,7 +17,6 @@ namespace CQRSAPI.QueryClass
         public Guid EmployeeId { get; set; }
 
         }
-
         public class CommandHandler:IRequestHandler<Command,DTO.EmployeeDTO>
         {
             private readonly AppDbContext _dbContext ;
@@ -26,7 +24,6 @@ namespace CQRSAPI.QueryClass
             {
                 _dbContext = dbContext;
             }
-
             public async Task<DTO.EmployeeDTO> Handle(Command request,CancellationToken cancellationToken)
             {
                 var entity = new tbl_Employee
